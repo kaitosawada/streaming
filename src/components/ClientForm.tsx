@@ -15,7 +15,12 @@ export default function ClientForm() {
   })
 
   useEffect(() => {
-    fetch('/api/form-data')
+    fetch('/api/form-data', {
+      cache: 'no-store',
+      headers: {
+        'Cache-Control': 'no-cache'
+      }
+    })
       .then(res => res.json())
       .then(data => {
         setFormData(data)

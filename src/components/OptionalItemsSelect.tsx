@@ -1,5 +1,10 @@
 async function getOptionalItems() {
-  const res = await fetch('http://localhost:3000/api/optional-items')
+  const res = await fetch('http://localhost:3000/api/optional-items', {
+    cache: 'no-store',
+    headers: {
+      'Cache-Control': 'no-cache'
+    }
+  })
   const data = await res.json()
   return data.optionalItems
 }

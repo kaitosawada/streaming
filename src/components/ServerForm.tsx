@@ -2,7 +2,10 @@ import type { FormData } from '@/types/form'
 
 async function getFormData(): Promise<FormData> {
   const res = await fetch('http://localhost:3000/api/form-data', {
-    next: { revalidate: 60 }
+    cache: 'no-store',
+    headers: {
+      'Cache-Control': 'no-cache'
+    }
   })
   return res.json()
 }
