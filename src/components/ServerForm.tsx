@@ -1,7 +1,8 @@
 import type { FormData } from '@/types/form'
+import { getBaseUrl } from '@/utils'
 
 async function getFormData(): Promise<FormData> {
-  const res = await fetch('http://localhost:3000/api/form-data', {
+  const res = await fetch(`${getBaseUrl()}/api/form-data`, {
     cache: 'no-store',
     headers: {
       'Cache-Control': 'no-cache'

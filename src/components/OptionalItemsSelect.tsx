@@ -1,5 +1,7 @@
+import { getBaseUrl } from "@/utils"
+
 async function getOptionalItems() {
-  const res = await fetch('http://localhost:3000/api/optional-items', {
+  const res = await fetch(`${getBaseUrl()}/api/optional-items`, {
     cache: 'no-store',
     headers: {
       'Cache-Control': 'no-cache'
